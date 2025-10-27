@@ -2,47 +2,80 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Contador até ver a Ana</title>
+  <title>⏰ Contando até ver a Ana 💕</title>
   <style>
     body {
-      background-color: #51a3e6;
-      color: #011a33;
-      font-family: Arial, sans-serif;
+      background-color: #ffe6f2;
+      color: #ff69b4;
+      font-family: 'Comic Sans MS', 'Poppins', cursive;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       flex-direction: column;
       text-align: center;
+      overflow: hidden;
     }
+
     h1 {
-      font-size: 2em;
+      font-size: 2.2em;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 6px #ffb6c1;
     }
+
     #contador {
-      font-size: 2em;
-      background: #cce0ff;
-      padding: 20px 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      font-size: 1.8em;
+      background: #fff0f5;
+      padding: 25px 45px;
+      border-radius: 25px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+      border: 3px solid #ffb6c1;
       font-family: 'Courier New', monospace;
+      color: #ff1493;
+    }
+
+    .hello-kitty {
+      width: 150px;
+      margin-bottom: 15px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .hearts {
+      position: fixed;
+      bottom: 10px;
+      font-size: 1.5em;
+      color: #ff69b4;
+      animation: floatUp 5s infinite ease-in-out;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>⏰ Contando até ver a Ana</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png" class="hello-kitty" alt="Hello Kitty">
+  <h1>💖 Contando até ver a Ana 💖</h1>
   <div id="contador">Carregando...</div>
 
+  <div class="hearts">💗💖💕</div>
+
   <script>
-    // Data exata do encontro: 28/10/2025 às 08:00
     const dataAna = new Date("2025-10-28T08:00:00");
 
     function atualizarContador() {
       const agora = new Date();
       let diff = dataAna - agora;
 
-      if(diff < 0) {
-        document.getElementById("contador").textContent = "Já é hora de ver a Ana! ❤️";
+      if (diff < 0) {
+        document.getElementById("contador").textContent = "Já é hora de ver a Ana! 🎀💞";
         return;
       }
 
@@ -55,7 +88,7 @@
         `${horas}h ${minutos}m ${segundos}s ${milissegundos}ms`;
     }
 
-    setInterval(atualizarContador, 10); // atualiza a cada 10ms
+    setInterval(atualizarContador, 10);
     atualizarContador();
   </script>
 </body>
